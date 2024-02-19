@@ -26,7 +26,21 @@ public class Order {
     }
 
     //method to get the price of individual items
-    pubic double getPrice
+    public double getPrice() {
+        return 12.5; //requires implementation
+    }
+
+    // method to add discount to order
+    public void addDiscount(int discountAmount) {
+        // adds a discount to the order. will affect the total order price
+        priceOfOrder = priceOfOrder - ( discountAmount / 100);
+    }
+
+    // method to process payment
+    public String processPayment() {
+        // returns a string with the bill of that specific table
+        return String.format("You have %.2f to pay", this.priceOfOrder);
+    }
 
 
 }
