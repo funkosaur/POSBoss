@@ -1,3 +1,7 @@
+package Model;
+
+
+
 public class Table {
     public int tableID;
     public Order order;

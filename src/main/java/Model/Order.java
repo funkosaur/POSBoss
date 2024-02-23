@@ -1,3 +1,5 @@
+package Model;
+
 public class Order {
     // i'll set all variables at public. for the sake of the project we'll make them private with getters and setters later
     public int orderID;

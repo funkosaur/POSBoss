@@ -1,3 +1,6 @@
+package Model;
+
+
 public class Products {
     public String name;
     public double cost;
