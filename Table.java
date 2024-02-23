@@ -6,4 +6,9 @@ public class Table {
     public Table(){
         
     }
+
+    //method to make the table avalable
+    public void makeTableAvailable(int tableID) {
+        this.tableStatus = true;
+    }
 }
