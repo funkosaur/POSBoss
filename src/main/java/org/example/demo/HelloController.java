@@ -9,8 +9,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class HelloController {
+
+    private Stage stage;
 
     public HelloController() {
 
@@ -23,23 +26,21 @@ public class HelloController {
     @FXML
     private PasswordField password;
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
     public void userLogIn(ActionEvent event) throws IOException {
         checkLogin();
-
     }
 
     private void checkLogin() throws IOException {
-        HelloApplication m = new HelloApplication();
-        if (username.getText().toString().equals("123") && password.getText().toString().equals("123")) {
-
-            //FALI SVAŠTAAA//
-            m.changeScene("afterLogin.fxml");
+        if (username.getText().equals("123") && password.getText().equals("123")) {
+            HelloApplication.changeScene("afterLogin.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
-
-            //FALII SVAŠTAAA//
+            // Handle empty fields
         } else {
-
-            //FALII SVAŠTAA//
+            // Handle incorrect login
         }
     }
 
