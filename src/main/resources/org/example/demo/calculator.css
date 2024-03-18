@@ -1,0 +1,26 @@
+#calculator {
+    -fx-background-color: linear-gradient(to bottom right, #fc00ff, #00dbde);
+    -fx-background-radius: 15 px;
+}
+
+.keyresult {
+    -fx-border-width: 0 0 2 0; 
+    -fx-border-color: rgba(140, 0, 143, 0.30);
+    -fx-text-fill:#fff;
+    -fx-font-size:24px;
+    -fx-padding: 15px 15px 1px 15px;
+}
+
+.keypad {
+    -fx-background-color: rgba ;
+    -fx-background-radius: 15px;
+    -fx-background-radius: 0px;
+    -fx-text-fill:#fff;
+    -fx-font-size: 30px;
+    -fx-cursor: hand;
+}
+
+#NumButtons:hover, #DotButton:hover, #OperatorButtons:hover{
+    -fx-background-color: rgba(140, 0, 143, 0.30);
+    -fx-background-radius: 15px;
+}

@@ -14,16 +14,16 @@
 <?import javafx.stage.Screen?>
 <?import javafx.scene.layout.StackPane?>
 
-<BorderPane style="-fx-background-color: beige;"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.AfterLogin"
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.AfterLogin"
             prefWidth="${screen.visualBounds.width}"
             prefHeight="${screen.visualBounds.height}">
    <fx:define>
       <Screen fx:factory="getPrimary" fx:id="screen"/>
    </fx:define>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane style="-fx-background-color: #3b3b58;" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="logout" layoutX="897.0" layoutY="951.0" mnemonicParsing="false" onAction="#userLogOut" prefHeight="44.0" prefWidth="134.0" style="-fx-background-color: #FFC900;" text="LOG OUT">
+            <Button fx:id="logout" layoutX="897.0" layoutY="951.0" mnemonicParsing="false" onAction="#userLogOut" prefHeight="44.0" prefWidth="134.0" style="-fx-background-color: #cf9876;" text="LOG OUT">
                <font>
                   <Font name="Bodoni MT" size="21.0" />
                </font>
@@ -31,30 +31,40 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="createOrder" layoutX="554.0" layoutY="151.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="141.0" prefWidth="829.0" style="-fx-background-color: #FFC900;" text="CREATE ORDER">
+            <Button fx:id="createOrder" layoutX="554.0" layoutY="151.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="141.0" prefWidth="829.0" styleClass="SomeButtons" text="CREATE ORDER" stylesheets="@SomeButtons.css">
                <font>
-                  <Font name="Bodoni MT" size="73.0" />
+                  <Font name="Bodoni MT" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="554.0" layoutY="382.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="829.0" style="-fx-background-color: #FFC900;" text="REMOVE ORDER">
+
+            <Button fx:id="removeOrder" layoutX="554.0" layoutY="382.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="829.0" styleClass="SomeButtons" text="REMOVE ORDER" stylesheets="@SomeButtons.css">
                <font>
-                  <Font name="Bodoni MT" size="73.0" />
+                  <Font name="Bodoni MT" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="552.0" layoutY="629.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="829.0" style="-fx-background-color: #FFC900;" text="TABLES">
+
+            <Button fx:id="tables" layoutX="552.0" layoutY="629.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="829.0" styleClass="SomeButtons" text="TABLES" stylesheets="@SomeButtons.css">
                <font>
-                  <Font name="Bodoni MT" size="73.0" />
+                  <Font name="Bodoni MT" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button layoutX="1851.0" layoutY="18.0" mnemonicParsing="false" onAction="#userExit" prefHeight="41.0" prefWidth="47.0" style="-fx-background-radius: 50; -fx-background-color: #FF4433;" text="X" fx:id="xbut">
+               <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+         </Button>
          </children>
       </AnchorPane>
    </center>
