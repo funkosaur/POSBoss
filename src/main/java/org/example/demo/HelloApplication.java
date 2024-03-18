@@ -1,7 +1,14 @@
 package org.example.demo;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import Controller.AfterLogin;
+import Controller.BeersScreen;
+import Controller.CreateOrder;
+import Controller.HelloController;
+import Model.Order;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -15,6 +22,8 @@ import javafx.stage.StageStyle;
 public class HelloApplication extends Application {
 
     private static Stage primaryStage;
+
+    public static List<Order> OrdersArrayList = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception {

@@ -1,16 +1,20 @@
-package org.example.demo;
+package Controller;
 
-import java.io.IOException;
-
+import Model.Order;
+import Model.OrderRepository;
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-//import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.example.demo.HelloApplication;
+
+import java.io.IOException;
+
+import static org.example.demo.HelloApplication.OrdersArrayList;
 
 public class CreateOrder {
 
@@ -33,7 +37,14 @@ public class CreateOrder {
     @FXML
     public void initialize() {
         // Optionally, you can set other properties or perform initialization here
+        // Assuming you have created an Order object in this method
+        Order order = new Order();
+
+        // Add the order to the OrderRepository
+        OrdersArrayList.add(order);
+        System.out.println("this works");
     }
+
 
     public void setFullScreen() {
         if (stage != null) {
