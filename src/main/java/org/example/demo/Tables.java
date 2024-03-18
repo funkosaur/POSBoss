@@ -2,22 +2,22 @@ package org.example.demo;
 
 import java.io.IOException;
 
+import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+//import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-public class AfterLogin {
+public class Tables {
 
-    @FXML
-    private Button logout;
+    @FXML Button goBack;
 
     @FXML
     private Button createOrder;
-
-    @FXML
-    private Button tables;
 
     @FXML
     private Button xbut;
@@ -34,12 +34,6 @@ public class AfterLogin {
         // Optionally, you can set other properties or perform initialization here
     }
 
-    @FXML
-    public void userLogOut(ActionEvent event) throws IOException {
-        HelloApplication.changeScene("hello-view.fxml");
-    }
-
-    // Add a method to set the stage to fullscreen
     public void setFullScreen() {
         if (stage != null) {
             stage.setFullScreen(true);
@@ -47,17 +41,7 @@ public class AfterLogin {
     }
 
     @FXML
-    public void createOrder(ActionEvent event) throws IOException {
-        HelloApplication.changeScene("createOrder.fxml");
-    }
-
-    @FXML
-    public void Tables(ActionEvent event) throws IOException {
-        HelloApplication.changeScene("Tables.fxml");
-    }
-    
-    @FXML
-     public void userExit(ActionEvent event) throws IOException {
-        Platform.exit();
+    public void goBack(ActionEvent event) throws IOException {
+        HelloApplication.changeScene("afterLogin.fxml");
     }
 }

@@ -19,6 +19,17 @@ public class Order {
     // method to add product items to the order
     public void addProduct (){
         // needs implementation
+        /*if(fx:id="result" != "")
+        {
+            for(int x = 0; x <= result; x++)
+            {
+                //funcxtion
+            }
+        }
+        else
+        {
+            // run function
+        } */
     }
 
     // method to remove products from an order

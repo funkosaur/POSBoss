@@ -45,6 +45,9 @@ public class HelloApplication extends Application {
             loadCreateOrder();
         } else if (fxml.equals("beersScreen.fxml")) {
             loadBeersScreen();
+        } else if (fxml.equals("Tables.fxml")){
+            centerStageOnScreen(primaryStage);
+            loadTablesScreen();
         }
     }
 
@@ -108,6 +111,18 @@ public class HelloApplication extends Application {
 
         // Show the BeersScreen stage
         beersScreenStage.show();
+    }
+
+    private static void loadTablesScreen() throws IOException
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tables.fxml"));
+        Parent pane = fxmlLoader.load();
+        // Set the scene and AfterLogin controller
+        primaryStage.setScene(new Scene(pane));
+        CreateOrder createOrderController = fxmlLoader.getController();
+        createOrderController.setStage(primaryStage);
+        createOrderController.setFullScreen();
+        //centerStageOnScreen(stg);
     }
 
     private static void centerStageOnScreen(Stage stage) {

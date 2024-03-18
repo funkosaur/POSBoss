@@ -49,7 +49,7 @@
                </cursor>
             </Button>
 
-            <Button fx:id="tables" layoutX="552.0" layoutY="629.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="829.0" styleClass="SomeButtons" text="TABLES" stylesheets="@SomeButtons.css">
+            <Button fx:id="tables" layoutX="552.0" layoutY="629.0" mnemonicParsing="false" onAction="#Tables" prefHeight="141.0" prefWidth="829.0" styleClass="SomeButtons" text="TABLES" stylesheets="@SomeButtons.css">
                <font>
                   <Font name="Bodoni MT" size="23.0" />
                </font>
