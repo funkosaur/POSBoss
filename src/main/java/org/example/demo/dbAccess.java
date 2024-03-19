@@ -5,7 +5,8 @@ public class dbAccess
 {
   public void loadDriver() throws Exception
   {
-    System.out.println("loading linux access driver");
+    // System.out.println("loading linux access driver");
+    System.out.println("loading derbyyy access driver");
     try {
       // Class.forName("com.mysql.cj.jdbc.Driver");
       Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
@@ -20,9 +21,11 @@ public class dbAccess
 
   public String urlOfDatabase()
   {
-    System.out.println("loading linux access database url");
+    // System.out.println("loading linux access database url");
+    System.out.println("loading derby access database url");
     // String url = "jdbc:mysql://165.227.235.122:3306/mb1868_POS";
-    String url = "jdbc:derby:catshop.db";
+    // String url = "jdbc:derby:catshop.db";
+    String url = "jdbc:derby:POSBoss;create=true";
     System.out.println("Database URL: " + url);
     return url;
   }

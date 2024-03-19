@@ -1,27 +1,26 @@
 package org.example.demo;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class derbyAccess {
-    private static final String URLdb =
-                 "jdbc:derby:catshop.db";
-  private static final String DRIVER =
-                 "org.apache.derby.jdbc.EmbeddedDriver";
+    public static void main(String[] args) {
+        // Load the Derby JDBC driver (optional for JDBC 4.0 and later)
+        try {
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Failed to load Derby JDBC driver: " + e.getMessage());
+            return;
+        }
 
-  /**
-   * Load the Apache Derby database driver
-   */
-  public void loadDriver() throws Exception
-  {
-    System.out.println("loading derby driver");
-    Class.forName(DRIVER).newInstance();
-  }
+        // JDBC URL for connecting to the database
+        String url = "jdbc:derby:POSBoss;create=true";
 
-  /**
-   * Return the url to access the database
-   * @return url to database
-   */
-  public String urlOfDatabase()
-  {
-    System.out.println("loading derby dabase url");
-    return URLdb;
-  }
+        try (Connection connection = DriverManager.getConnection(url)) {
+            System.out.println("Connected to the database.");
+        } catch (SQLException e) {
+            System.err.println("Error connecting to the database: " + e.getMessage());
+        }
+    }
 }

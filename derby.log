@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Mar 19 13:16:24 GMT 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018e-56db-1ee0-00000e51c6d0 
+on database directory C:\Users\soboa\OneDrive - University of Brighton\Documents\1.University of Brighton - Comp Science\YEAR 2\CI 536 - Integrated group project\POSBoss\POSBoss with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@7291c18f 
+Loaded from file:/C:/Users/soboa/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Microsoft
+java.runtime.version=17.0.6+10-LTS
+user.dir=C:\Users\soboa\OneDrive - University of Brighton\Documents\1.University of Brighton - Comp Science\YEAR 2\CI 536 - Integrated group project\POSBoss
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
