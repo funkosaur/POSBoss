@@ -10,9 +10,11 @@ import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.stream.*;
 
 import org.example.demo.dbAccess;
+
+import javafx.scene.control.Button;
 
 public class Order {
 
@@ -31,21 +33,24 @@ public class Order {
         this.orderID = orderID;
     }
 
-    public synchronized Products getDetails()
-        //  throws StockException
+    public synchronized Products getDetails(Button button) throws Exception
   {
     try
     {
-        dbAccess   derbyAccess = new dbAccess();
+        dbAccess derbyAccess = new dbAccess();
         derbyAccess.loadDriver();
         Connection theconn = DriverManager.getConnection(derbyAccess.urlOfDatabase());
         Statement stmt = theconn.createStatement();
         Products prd = new Products("", 0.0, "");
+
+        String buttonLabel = button.getText();
+        String buttonId = button.getId();
+
         ResultSet rs = stmt.executeQuery(
         "select name, description, cost, productType " +
         "  from roductsTable, stockTable " +
-        "  where  productsTable.name = '" + this.label.getName() + "' " +
-        "  and    stockTable.name   = '" + this.label.getName() + "'"
+        "  where  productsTable.name = '" + buttonLabel + "' " +
+        "  and    stockTable.name   = '" + buttonLabel + "'"
         );
         if ( rs.next() )
         {
@@ -60,6 +65,7 @@ public class Order {
     {
        System.out.println(( "SQL getDetails: " + e.getMessage() ));
     }
+    return null;
   }
     // method to write in the white textbox
     public String writeInTextBox() {
@@ -72,12 +78,12 @@ public class Order {
 
     if (orderID > 0) {
         Map<String, List<Products>> groupedProducts = this.stream()
-            .collect(Collectors.groupingBy(Products::getProductNum));
+            .collect(Collectors.groupingBy(Products::getName));
 
         for (Map.Entry<String, List<Products>> entry : groupedProducts.entrySet()) {
-            int number = entry.getValue().stream().mapToInt(Products::getQuantity).sum();
+            int number = entry.getValue().stream().mapToInt(Products::getName).sum();
             Products pr = entry.getValue().get(0);
-            sb.append(pr.getProductNum()).append(" ");
+            sb.append(pr.getName()).append(" ");
             sb.append(pr.getDescription()).append(" ");
             sb.append("(").append(number).append(") ");
             sb.append(csign).append(pr.getCost() * number).append("\n");
@@ -118,7 +124,7 @@ public class Order {
         // iterate through the productz arraylist (for pr: productz) and where pr.getName().equals(something here) then it deletes it from the productz 
     }
     public void removeLastProduct() {
-        products.remove(products.size() -1);
+        productz.remove(productz.size() -1);
     }
  
     // method to add a message related to the order. such as "alergic to cheese"
@@ -135,7 +141,7 @@ public class Order {
     // method to add discount to order
     public void addDiscount(int discountAmount) {
         // adds a discount to the order. will affect the total order price
-        price = price - ( discountAmount / 100);
+        priceOfOrder = priceOfOrder - ( discountAmount / 100);
     }
 
     // method to process payment
