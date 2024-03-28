@@ -5,9 +5,11 @@ public class dbAccess
 {
   public void loadDriver() throws Exception
   {
-    System.out.println("loading linux access driver");
+    // System.out.println("loading linux access driver");
+    System.out.println("loading derbyyy access driver");
     try {
-      Class.forName("com.mysql.cj.jdbc.Driver");
+      // Class.forName("com.mysql.cj.jdbc.Driver");
+      Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
       // Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Driver loaded successfully");
     } catch (Exception e) {
@@ -19,24 +21,27 @@ public class dbAccess
 
   public String urlOfDatabase()
   {
-    System.out.println("loading linux access database url");
-    String url = "jdbc:mysql://178.128.37.54:3306/as2491_POS";
+    // System.out.println("loading linux access database url");
+    System.out.println("loading derby access database url");
+    // String url = "jdbc:mysql://165.227.235.122:3306/mb1868_POS";
+    // String url = "jdbc:derby:catshop.db";
+    String url = "jdbc:derby:POSBoss;create=true";
     System.out.println("Database URL: " + url);
     return url;
   }
 
   public String username()
   {
-    String username = "as2491_POS";
+    String username = "mb1868_POS";
     System.out.println("Username: " + username);
     return username;
   }
 
   public String password()
   {
-    String password = "PosBOSS420";
+    // String password = "PosBOSS420";
+    String password = "posboss4201";
     System.out.println("Password: " + password);
     return password;
-    // String password = "Deoareceichtyandro123";
   }
 }

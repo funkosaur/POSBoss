@@ -62,20 +62,22 @@ class dbSetup
   public static void main(String[] args)
   {
     Connection theCon    = null;      // Connection to database
-    dbAccess   acs  = new dbAccess();
+    // dbAccess   acs  = new dbAccess();
+    dbAccess   derbyAccess = new dbAccess();
     Statement theStmt = null;
     
     System.out.println("Setup Setup POSBoss database items");
     
     try {
         
-        acs.loadDriver(); // Load the JDBC driver
-        theCon = DriverManager.getConnection(acs.urlOfDatabase(), acs.username(), acs.password());
+        derbyAccess.loadDriver(); // Load the JDBC driver
+        theCon = DriverManager.getConnection(derbyAccess.urlOfDatabase());
+        // theCon = DriverManager.getConnection(derbyAccess.urlOfDatabase(), derbyAccess.username(), derbyAccess.password());
         theStmt = theCon.createStatement();
         theCon.setAutoCommit(true);
     }
     catch (SQLException e) {
-        System.err.println("Problem with connection to " + acs.urlOfDatabase());
+        System.err.println("Problem with connection to " + derbyAccess.urlOfDatabase());
         e.printStackTrace();
         System.out.println("SQLException: " + e.getMessage());
         System.out.println("SQLState:     " + e.getSQLState());
@@ -108,7 +110,7 @@ class dbSetup
              break;
            case 's' :
            case 'f' :
-             query( stmt, acs.urlOfDatabase(), sqlStatement );
+             query( stmt, derbyAccess.urlOfDatabase(), sqlStatement );
              break;
            case '*' :
              if ( sqlStatement.length() >= 2 )
@@ -135,7 +137,7 @@ class dbSetup
       } catch (Exception e)
       {
         System.out.println("problems with SQL sent to " +
-                           acs.urlOfDatabase() +
+        derbyAccess.urlOfDatabase() +
                            "\n" + sqlStatement + "\n" + e.getMessage());
       }
     }
