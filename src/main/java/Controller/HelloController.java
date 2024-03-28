@@ -1,7 +1,8 @@
-package org.example.demo;
+package Controller;
 
 import java.io.IOException;
 
+import javafx.application.Platform;
 //import org.controlsfx.control.StatusBar;
 //import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.demo.HelloApplication;
 
 public class HelloController {
 
@@ -21,6 +23,8 @@ public class HelloController {
 
     @FXML
     private Button button;
+    @FXML
+    private Button xbut;
     @FXML
     private TextField username;
     @FXML
@@ -42,6 +46,11 @@ public class HelloController {
         } else {
             // Handle incorrect login
         }
+    }
+    
+    @FXML
+    public void userExit(ActionEvent event) throws IOException {
+        Platform.exit();
     }
 
 }

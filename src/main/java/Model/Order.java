@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 import org.example.demo.dbAccess;
 
 public class Order {
+
     // i'll set all variables at public. for the sake of the project we'll make them private with getters and setters later
     public int orderID = 0;
     // public Products product;
@@ -25,6 +26,7 @@ public class Order {
     public Order(double priceOfOrder, int orderID){
         orderID++;
         this.priceOfOrder = 0.0;
+
         this.orderMessage = "";
         this.orderID = orderID;
     }
@@ -116,7 +118,7 @@ public class Order {
         // iterate through the productz arraylist (for pr: productz) and where pr.getName().equals(something here) then it deletes it from the productz 
     }
     public void removeLastProduct() {
-        productz.remove(productz.size() -1);
+        products.remove(products.size() -1);
     }
  
     // method to add a message related to the order. such as "alergic to cheese"
@@ -133,12 +135,13 @@ public class Order {
     // method to add discount to order
     public void addDiscount(int discountAmount) {
         // adds a discount to the order. will affect the total order price
-        priceOfOrder = priceOfOrder - ( discountAmount / 100);
+        price = price - ( discountAmount / 100);
     }
 
     // method to process payment
     public String processPayment() {
         // returns a string with the bill of that specific table
+
         // can be implemented similarly to what Ive done on the catshop receipt.
         return String.format("You have %.2f to pay", this.priceOfOrder);
     }

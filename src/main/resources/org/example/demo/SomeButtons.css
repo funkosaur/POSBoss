@@ -1,0 +1,22 @@
+.SomeButtons {
+    -fx-font-family: "Open Sans", sans-serif;
+    -fx-font-size: 16px;
+    -fx-letter-spacing: 2px;
+    -fx-text-decoration: none;
+    -fx-text-transform: uppercase;
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+    -fx-border-width: 3px;
+    -fx-border-color: #000;
+    -fx-padding: 0.25em 0.5em;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 0);
+    -fx-position: relative;
+    -fx-user-select: none;
+    -fx-touch-action: manipulation;
+}
+
+.SomeButtons:pressed {
+    -fx-effect: null;
+    -fx-translate-y: 5;
+    -fx-translate-x: 5;
+}

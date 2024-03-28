@@ -1,11 +1,13 @@
-package org.example.demo;
+package Controller;
 
 import java.io.IOException;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.example.demo.HelloApplication;
 
 public class AfterLogin {
 
@@ -14,6 +16,9 @@ public class AfterLogin {
 
     @FXML
     private Button createOrder;
+
+    @FXML
+    private Button xbut;
 
     private Stage stage;
 
@@ -42,5 +47,10 @@ public class AfterLogin {
     @FXML
     public void createOrder(ActionEvent event) throws IOException {
         HelloApplication.changeScene("createOrder.fxml");
+    }
+    
+    @FXML
+     public void userExit(ActionEvent event) throws IOException {
+        Platform.exit();
     }
 }
