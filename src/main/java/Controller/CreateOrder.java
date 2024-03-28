@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 //import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -20,9 +19,6 @@ public class CreateOrder {
 
     @FXML
     private Label result;
-
-    @FXML
-    private VBox beersContainer; // Container for beer buttons
 
     @FXML
     private Button xbut;
@@ -52,24 +48,7 @@ public class CreateOrder {
 
     @FXML
     public void goToBeers(ActionEvent event) throws IOException {
-        // Call method to load beersScreen.fxml
         HelloApplication.changeScene("beersScreen.fxml");
-
-        // Retrieve the instance of BeersScreen controller
-        BeersScreen beersScreenController = HelloApplication.getBeersScreenController();
-
-        // Set beersContainer to the controller
-        if (beersScreenController != null) {
-            // Ensure beersContainer is initialized
-            if (beersContainer != null) {
-                beersScreenController.setBeersContainer(beersContainer);
-                beersScreenController.showBeers(event);
-            } else {
-                System.err.println("beersContainer is null in CreateOrder controller.");
-            }
-        } else {
-            System.err.println("BeersScreen controller is null.");
-        }
     }
 
     // Event handler for calculator buttons
