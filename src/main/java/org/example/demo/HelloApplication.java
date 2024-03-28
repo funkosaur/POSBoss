@@ -90,7 +90,7 @@ public class HelloApplication extends Application {
         afterLoginController.setStage(primaryStage);
         afterLoginController.setFullScreen();
         //centerStageOnScreen(stg);
-        //stg.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
+        //stg.setWidth(Screen.getPrimary().getVisualBounds().getWidth()); yy
         //stg.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
         //SHOW THEM WHAT HAPPENS!!!!!
     }
@@ -130,6 +130,24 @@ public class HelloApplication extends Application {
 
         stage.setX(centerX);
         stage.setY(centerY);
+    }
+
+    public static BeersScreen getBeersScreenController() {
+        // Retrieve the FXMLLoader instance for beersScreen.fxml
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("beersScreen.fxml"));
+        try {
+            // Load the root element (Parent) of beersScreen.fxml
+            Parent pane = fxmlLoader.load();
+            
+            // Retrieve the controller associated with beersScreen.fxml
+            BeersScreen beersScreenController = fxmlLoader.getController();
+            
+            // Return the controller instance
+            return beersScreenController;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static void main(String[] args) {

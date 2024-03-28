@@ -1,0 +1,5 @@
+/* Define a style for all buttons in the beersContainer */
+#beersContainer > .button {
+    -fx-background-color: red; /* Set the background color to red */
+    -fx-margin: 10; /* Set the margin to 10 pixels */
+}
